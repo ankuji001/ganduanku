@@ -1,134 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ambassador-website</title>
-  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.5/build/spline-viewer.js"></script>
-<link rel="stylesheet" href="style.css" class="style">
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Fest Campus</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+            justify-content: center;
+            padding: 20px;
+            
+        }
+
+
+
+        h1 {
+            text-align: center;
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+    
+
+        .nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            padding: 10px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        .nav a:hover {
+            text-decoration: underline;
+        }
+
+        .nav button {
+            padding: 10px 20px;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            p {
+                font-size: 1em;
+            }
+
+            .robot {
+                width: 150px;
+                height: 150px;
+            }
+        }
+.background-spline{
+  position: relative;
+  position: fixed;
+}
+
+
+    .navbar {
+      position: fixed;
+      bottom: 8%;
+      height: 60px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      width: 100%;
+      max-width: 70%; /* Optional: Set a max-width for the navbar */
+      background-color: transparent;
+      border: 2px solid #fff;
+      border-radius: 30px 30px 30px 30px;
+      overflow: hidden;
+      box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+
+    .navbar a {
+      flex: 1;
+      text-align: center;
+      padding: 15px;
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      transition: background-color 0.3s ease;
+    }
+
+    .navbar a:hover {
+      background-color: transparent;
+    }
+
+    .navbar i {
+      display: block;
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+
+    .navbar a.active {
+      background-color: transparent;
+    }
+
+    @media (max-width: 768px) {
+      .navbar a {
+        font-size: 12px;
+        padding: 10px;
+      }
+
+      .navbar i {
+        font-size: 18px;
+      }
+    }
+    
+    /* @keyframes slideInleft{
+  from{
+    transform: translateX(-100%);
+  }
+  to{
+    transform: translateX(0%);
+  }
+}
+    .heading-1{
+      animation:  slideInleft 7s ease-in 0s infinite normal none 
+     }
+.paragraph{
+  animation:  slideInleft 7s ease-in 0s infinite normal none }
+    */
+
+
+  
+    </style>
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.5/build/spline-viewer.js"></script>
+    </head>
+
 <body>
   <spline-viewer class="background-spline" url="https://prod.spline.design/HaEHmhKVqTJEQAru/scene.splinecode"></spline-viewer>
-  <style>
-    .background-spline {
-    position: absolute; 
-    background-color: black;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1; 
-    pointer-events: auto; 
-  }
-  </style>
-  <header> 
-    <nav>
+
+    <div class="container" style="margin-top: -30%;">
+        <h1 class="heading-1">Welcome to the Tech Fest Campus</h1>
+        <p class="paragraph">Discover the latest innovations and technology at our exciting Tech Fest event. Join our campus ambassador team and help us spread the word!</p>
+       
+           
+    </div>
     <div class="navbar">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/CGC_Jhanjeri-logo.jpg" alt="" style="height: 50px;width: auto;">
-      
-      <ul class="sidebar">
-        <li><a href="#" style="color: rgb(255, 255, 255);">home</a></li>
-        <li><a href="#" style="color: rgb(255, 255, 255);">about us</a></li>
-        <li><a href="#" style="color: rgb(255, 255, 255);">contact us</a></li>
-        <li><a href="#" style="color: rgb(255, 255, 255);">services</a></li>
-        <li onclick=closeSidebar() ><a href="sidebar" style="color: rgb(255, 255, 255);"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#000"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a> </li>
-      </ul><ul>
-        <li><a href="#" style="color: rgb(255, 255, 255);">home</a></li>
-        <li><a href="#" style="color: rgb(255, 255, 255);">about us</a></li>
-        <li><a href="#" style="color: rgb(255, 255, 255);">contact us</a></li>
-        <li><a href="#" style="color: rgb(255, 255, 255);">services</a></li>
-        <li onclick=showSidebar() ><a href="sidebar" style="color: rgb(255, 255, 255);"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#000"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a> </li>
-      </ul>
-      
+      <a href="#" class="active">
+        <i class="fa fa-home"></i>
+        Home
+      </a>
+      <a href="#">
+        <i class="fa fa-search"></i>
+        Search
+      </a>
+      <a href="#">
+        <i class="fa fa-bell"></i>
+        Notifications
+      </a>
+      <a href="#">
+        <i class="fa fa-envelope"></i>
+        Messages
+      </a>
+      <a href="#">
+        <i class="fa fa-user"></i>
+        Profile
+      </a>
     </div>
   
-  </nav>
-<script>
-function showSidebar(){
-  const sidebar = document.querySelector('.sidebar')
-   sidebar.style.showSidebar = 'flex'
-}
-</script>
-    
-  </header>
-  <br>
-  <br>
 
-  <div class="flex-container">
-    <div class="flex-item" style="height: 130px;">
-       <div class="card-1-content">
-      <h1 style="font-size: medium;">
-        About the Ambassador
-      </h1>
-      <p>
-        Discover the heart of our campus investor program learn about our mission, vision. </p>
-      </div>
-    </div>
-    <div class="flex-item" style="height: 100px;">
-      <div class="card-2-content">
-        <h1 style="font-size: small;">
-          Join Us
-        </h1>
-        <p>
-          Connect with like-minded peers.
-        </p>
-        <div tabindex="0" class="signInButton">
-          <p class="signInButtonText">Join Us</p>
-        </div>
-      </div>
-    </div>
-    
-   
-      
-      </div>
-    </div>
-  </div>
-  <div class="flex-container">
-    <div class="flex-item" style="height: 130px;">
-      <div class="card-3-content">
-        <h1 style="font-size: medium;"> Events</h1>
-        <P>
-          Dive into our investment strategies, success stories and we empower students. 
-        </P>
-      </div>
-    </div>
-    <div class="flex-item" style="height: 130px;">
-       <div class="card-4-content">
-      <h1 style="font-size: medium;"> Contact</h1>
-      <p>
-        Reach out to us Whether you have a question or want to collaborate.
-      </p>
-      </div>
-    </div>
-  </div>
-  <div class="flex-container">
-    <div class="flex-item" style="height: 130px;">
-       <div class="card-5-content">
-     <h1 style="font-size: medium;">
-      Network
-     </h1>
-     <p>
-      Stay updated on workshops, guest lectures, and networking opportunities.
-     </p>
-      </div>
-    </div>
-    <div class="flex-item" style="height: 130px;">
-       <div class="card-6-content">
-        <h1  style="font-size: medium;"> FAQS</h1>
-        <p>
-          As a campus ambassador, you'll gain leadership skills, expand your network.
-        </p>
-      </div>
-    </div>
-  </div>
+  
 </body>
 </html>
-
-
-
-
-
-
-
-
-
