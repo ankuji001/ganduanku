@@ -1,0 +1,228 @@
+*{
+    margin: 0%;
+    padding: 0;
+
+}
+
+
+.navbar {
+  background-color: transparent;
+  box-shadow: 3px 3px 3px rgba(255, 255, 255, 0.2);
+  position: relative; 
+  top: 0; 
+  left: 20px; 
+  display: flex; 
+  align-items: self-end; 
+  padding: 10px; 
+  box-sizing: border-box; 
+  width: calc(100% - 40px);
+  z-index: 2; 
+}
+
+.navbar img {
+  height: 50px;
+  width: auto;
+  margin-right: 20px;
+  justify-content: center; 
+}
+
+.navbar ul {
+  list-style: none; 
+  display: flex; 
+  margin: 0;
+  padding: 0; 
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.navbar li {
+  padding: 3px;
+  
+}
+
+.navbar a {
+  text-decoration: none; 
+  color: black; 
+  margin: 0 10px; 
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  
+}
+nav li:first-child{
+    margin-right: auto;
+}
+.sidebar{
+ position: fixed;
+ top: 0;
+ right: 0;
+ height: 100vh;
+ width: 250px;
+ z-index: 999;
+ background-color: transparent;
+ backdrop-filter: blur(20px);
+ box-shadow: -10px 0px 10px rgba(255, 255, 255, 0.2);
+ display: none;
+ flex-direction: column-reverse;
+align-items: flex-start;
+justify-content: flex-start;
+ 
+
+}
+.sidebar li {
+    width: 100%;
+
+}
+.sidebar a{
+    width: 100%;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-around; 
+  align-items: center;
+  flex-wrap: wrap;
+   
+  padding: 10px; 
+  gap: 5px;
+  background-color: transparent; 
+  position: relative; 
+  z-index: 2; 
+  }
+
+.flex-item {
+  background-color: transparent; 
+  color:#ffffff; 
+  padding: 10px; 
+  text-align: center;
+  border-radius: 20px;
+  width: 200px; 
+  height: 100px; 
+  font-size: small;
+  box-sizing: border-box; 
+  border: 2px solid black; /* Adds border */
+}
+
+@media screen and (max-width: 500px) {
+  .flex-container {
+    flex-direction: column;
+    align-items: center; 
+    align-items: flex-start;
+  }
+}
+
+.card-2-content {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
+  height: 100%;
+}
+
+.signInButton {
+  margin-top: auto; 
+  padding: 10px 20px;
+  background-color: #48f1db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-align: center;
+}
+
+.signInButton:hover {
+  background-color: #0000;
+}
+
+.signInButtonText {
+  margin: 0;
+}
+
+
+.signInButton {
+
+--signIn_width: 6rem;
+--signIn_height: 2.5rem;
+--signIn_bottomLeftTriangleSideLength: 1rem;
+--signIn_topRightTriangleSideLength: 0.9rem;
+
+position: relative;
+display: flex;
+justify-content: center;
+align-items: center;
+border: 1px solid white;
+width: 6rem;
+height: 2.5rem;
+background-color: #000000;
+overflow: hidden;
+}
+
+.signInButton::before {
+position: absolute;
+content: "";
+bottom: 0;
+left: 0;
+width: 0;
+height: 0;
+border-width: 0 var(--signIn_bottomLeftTriangleSideLength) var(--signIn_bottomLeftTriangleSideLength) 0;
+border-style: solid;
+border-color: transparent transparent white transparent;
+transition-timing-function: ease-in-out;
+transition-duration: 0.2s;
+}
+
+.signInButton::after {
+position: absolute;
+content: "";
+top: 0;
+right: 0;
+width: calc(var(--signIn_topRightTriangleSideLength) * 1.4142135623730950488016887242097);
+height: calc(var(--signIn_topRightTriangleSideLength) * 1.4142135623730950488016887242097);
+outline: 1px solid white;
+transform: translate(50%, -50%) rotate(45deg);
+transition-timing-function: ease-in-out;
+transition-duration: 0.2s;
+}
+
+.signInButton:hover {
+cursor: pointer;
+}
+
+.signInButton:hover::before {
+--signIn_bottomLeftTriangleSideLength: calc(var(--signIn_width) + var(--signIn_height) - var(--signIn_topRightTriangleSideLength) + (var(--signIn_topRightTriangleSideLength) * 0.3));
+}
+
+.signInButton:focus-visible::before {
+--signIn_bottomLeftTriangleSideLength: calc(var(--signIn_width) + var(--signIn_height) - var(--signIn_topRightTriangleSideLength) + (var(--signIn_topRightTriangleSideLength) * 0.3));
+}
+
+.signInButton:hover::after {
+transform: translate(calc(50% + var(--signIn_topRightTriangleSideLength) * 0.1), calc((50% + var(--signIn_topRightTriangleSideLength) * 0.1) * -1)) rotate(45deg);
+}
+
+.signInButton:focus-visible::after {
+transform: translate(calc(50% + var(--signIn_topRightTriangleSideLength) * 0.1), calc((50% + var(--signIn_topRightTriangleSideLength) * 0.1) * -1)) rotate(45deg);
+}
+
+.signInButton:hover>.signInButtonText {
+color: black;
+}
+
+.signInButton:focus-visible>.signInButtonText {
+color: black;
+}
+
+.signInButtonText {
+margin: auto 0;
+color: white;
+font-size: 0.875rem;
+line-height: 1.25rem;
+font-weight: 700;
+text-align: center;
+z-index: 1;
+transition-timing-function: ease-in-out;
+transition-duration: 0.2s;
+}
+
+
